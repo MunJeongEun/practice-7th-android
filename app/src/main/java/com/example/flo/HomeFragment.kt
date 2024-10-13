@@ -18,6 +18,11 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        // 앨범 이미지 클릭 시 Album Fragment로 전환
+        binding.homePannelAlbumImgIv1.setOnClickListener {
+            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm,AlbumFragment()).commitAllowingStateLoss()
+        }
+
         return binding.root
     }
 }

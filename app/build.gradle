@@ -4,6 +4,9 @@ plugins {
 }
 
 android {
+    // namespace 추가
+    namespace "com.example.flo"  // applicationId와 동일한 값 사용
+
     compileSdk 31
 
     viewBinding {
