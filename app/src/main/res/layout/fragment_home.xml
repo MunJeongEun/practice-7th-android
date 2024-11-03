@@ -319,12 +319,21 @@
 
         </LinearLayout>
 
-        <ImageView
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:src="@drawable/img_home_viewpager_exp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/home_album_layout"/>-->
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_banner_vp"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:scaleType="fitXY"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/img_home_viewpager_exp"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_album_layout"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
