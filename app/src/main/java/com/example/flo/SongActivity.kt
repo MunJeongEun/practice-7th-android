@@ -155,4 +155,5 @@ class SongActivity : AppCompatActivity() {
         mediaPlayer?.release()
         mediaPlayer = null
     }
+
 }

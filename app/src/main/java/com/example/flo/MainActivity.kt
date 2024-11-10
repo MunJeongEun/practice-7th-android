@@ -7,7 +7,7 @@ import android.util.Log
 import com.example.flo.databinding.ActivityMainBinding
 import com.google.gson.Gson
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     lateinit var binding: ActivityMainBinding
 
@@ -99,4 +99,17 @@ class MainActivity : AppCompatActivity() {
 
         setMiniPlayer(song)
     }
+
+    fun updateMiniPlayer(newSong: Song) {
+        song = newSong
+        setMiniPlayer(song)
+
+        // 현재 재생 중인 곡 정보 저장
+        val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        val songJson = gson.toJson(song)
+        editor.putString("songData", songJson)
+        editor.apply()
+    }
+
 }
