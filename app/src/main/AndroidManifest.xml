@@ -22,6 +22,14 @@
         <activity
             android:name=".SongActivity"
             android:exported="true"/>
+
+        <!-- Activity 추가 -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

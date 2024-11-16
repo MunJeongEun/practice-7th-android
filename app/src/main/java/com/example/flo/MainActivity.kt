@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         inputDummySongs()
+        inputDummyAlbums()
         initBottomNavigation()
 
 //        // 현재 화면의 미니 플레이어에 표시된 노래 제목과 가수 정보를 기반으로 Song 객체 생성
@@ -183,6 +184,58 @@ class MainActivity : AppCompatActivity(){
 
         val ssongs = songDB.songDao().getSongs()
         Log.d("DB data", ssongs.toString())
+    }
+
+    private fun inputDummyAlbums() {
+        val songDB = SongDatabase.getInstance(this)
+        val albums = songDB.albumDao().getAlbums()
+
+        if (albums.isNotEmpty()) return
+
+        songDB.albumDao().insert(
+            Album(
+                0,
+                "Butter",
+                "방탄소년단",
+                R.drawable.img_album_exp,
+            )
+        )
+
+        songDB.albumDao().insert(
+            Album(
+                1,
+                "만화 (滿花)",
+                "이무진",
+                R.drawable.album_cover_leemugin,
+            )
+        )
+
+        songDB.albumDao().insert(
+            Album(
+                2,
+                "1st Mini Album 'MANITO'",
+                "QWER",
+                R.drawable.album_cover_qwer,
+            )
+        )
+
+        songDB.albumDao().insert(
+            Album(
+                3,
+                "네모네모",
+                "YENA (최예나)",
+                R.drawable.album_cover_yena,
+            )
+        )
+
+        songDB.albumDao().insert(
+            Album(
+                4,
+                "IU 5th Album 'LILAC'",
+                "아이유",
+                R.drawable.img_album_exp2,
+            )
+        )
     }
 
     fun updateMiniPlayer(newSong: Song) {
